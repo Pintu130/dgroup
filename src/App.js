@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { storage } from "./assets";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div class="bg-blue-500 small:bg-red-500 xs:bg-slate-500 sm:bg-blue-600 md:bg-green-700 lg:bg-black xl:bg-red-800 2xl:bg-orange-400 3xl:bg-green-700 4xl:bg-amber-800 5xl:bg-gray-500 text-white">
+        This div changes color based on screen size.
+        <img src={storage} alt="storage" />
+      </div>
+    </>
   );
 }
 
