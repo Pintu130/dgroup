@@ -2,27 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 10px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     background: #f1f1f1; 
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #dcdcdc; 
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #b0c3cb; 
-  }
+  } */
 
-  @keyframes slide {
+  /* @keyframes slide {
     0% {
       opacity: 0;
       transform: translateY(-20px);
@@ -31,9 +27,13 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+  } */
   
-  .animate-slide {
-    animation: slide 0.5s ease-out forwards;
+  .relative:hover .absolute {
+    display: block;
+  }
+  #mobile-menu-2 {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
   
