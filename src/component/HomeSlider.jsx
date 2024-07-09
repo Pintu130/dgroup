@@ -16,7 +16,6 @@ export default function HomeSlider() {
         { src: Home_Slider4, order: 5 , text:'D Group Packers And Movers Packers and Movers are specialized in offering Storage Services to safeguards the goods of customers' },
         { src: Home_Slider5, order: 4 , text:'Single Largest Source for All Car and Bike Transportation' },
     ];
-    // Transit insurance basically protects and covers your goods against damage during transit. As a customer, you can directly buy transit insurance.
     const sortedImages = images.sort((a, b) => a.order - b.order);
 
     return (

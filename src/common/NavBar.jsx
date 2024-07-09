@@ -12,8 +12,8 @@ const NavBar = () => {
   };
 
   return (
-    <header>
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <a href="/" className="flex items-center">
             <img src={NavLogo} className="mr-3 h-6 sm:h-9" alt="Logo" />
@@ -55,7 +55,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/about"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
                 >
                   About
                 </NavLink>
@@ -63,7 +63,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/services"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
                 >
                   Services
                 </NavLink>
@@ -71,7 +71,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/track"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
                 >
                   Track Now
                 </NavLink>
@@ -79,7 +79,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/contact"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
                 >
                   Contact
                 </NavLink>
@@ -87,7 +87,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/review"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
                 >
                   Review
                 </NavLink>
