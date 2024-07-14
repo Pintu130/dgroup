@@ -5,7 +5,11 @@ import Home_Slider2 from "../assets/img/slider_image_2.jpg"
 import Home_Slider3 from "../assets/img/slider_image_3.jpg"
 import Home_Slider4 from "../assets/img/slider_image_4.jpg"
 import Home_Slider5 from "../assets/img/slider_image_5.jpg"
+import Card1 from "../assets/img/car carrier 2.jpeg"
+import Card2 from "../assets/img/card2.jpeg"
+import Card4 from "../assets/img/card4.jpeg"
+import Chooes from "../assets/img/chooes.jpeg"
 
 export  {
-    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5
+    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes
 }
