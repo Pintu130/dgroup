@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Services from "./Services";
 import Choose from "./Choose";
+import Footer from "./Footer";
 AOS.init({
   duration: 1000,
 });
@@ -53,6 +54,7 @@ const Home = () => {
       </div>
      <Choose/>
      <Services/>
+     <Footer/>
     </div>
   );
 };

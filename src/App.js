@@ -8,6 +8,7 @@ import Contact from "./page/Contact";
 import NavBar from "./common/NavBar";
 import ScrollTop from "./common/ScrollTop";
 import ScrollProgressBar from "./common/ScrollProgressBar";
+import Tracker from "./page/Tracker";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/track" element={<Tracker />} />
         </Routes>
         <ScrollTop />
       </div>

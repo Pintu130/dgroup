@@ -1,35 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Chooes } from "../assets";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { choose } from "../assets/data";
+import BookNow from "../component/BookNow";
 
 const Choose = () => {
- 
+  const [isOpen, setIsOpen] = useState(false);
+
+  console.log('isOpen',isOpen);
+ const handleOpen=() => {
+  console.log('asjchgsc');
+  setIsOpen(!isOpen);
+ }
   return (
     <div>
-      <div className="min-h-screen w-full flex items-center justify-center bg-gray-100">
-        <div className="bg-white shadow-lg overflow-hidden flex">
+      <div className="min-h-screen w-full flex items-center justify-center bg-white mt-24">
+        <div className="bg-white shadow-lg overflow-hidden lg:flex">
           <div
-            className="w-1/2 overflow-hidden border-r-8 border-r-blue-500 rounded-r-full"
+            className="lg:w-1/2 overflow-hidden border-r-8 border-r-blue-500 rounded-r-full"
             data-aos="slide-right"
           >
             <img
               src={Chooes}
               alt="Home Shifting"
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
           
-          <div className="w-1/2 p-4">
+          <div className="lg:w-1/2 p-4">
             <h1
-              className="text-3xl md:text-4xl font-bold  text-yellow-500 capitalize"
+              className="text-center lg:text-start text-3xl md:text-4xl font-bold  text-yellow-500 capitalize"
               data-aos="slide-up"
             >
               Why Choosing Us !
             </h1>
             <div>
               <h1
-                className="text-xl md:text-2xl font-bold py-2"
+                className="text-xl md:text-2xl font-bold py-2 text-center lg:text-start"
                 data-aos="slide-up"
               >
                 Few Reasons Why People Choosing Us!
@@ -51,13 +58,16 @@ const Choose = () => {
                   </div>
                 );
               })}
-              <button className="bg-blue-500 px-3 py-2 text-white font-semibold rounded-full shadow-2xl hover:bg-blue-600" data-aos="slide-left">
-                Book Now
+              <div className="flex justify-center">
+              <button onClick={handleOpen} className="bg-blue-500 px-3 py-2 text-white font-semibold rounded-full shadow-2xl hover:bg-blue-600" data-aos="slide-left">
+              Enquiry
               </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {isOpen && <BookNow handleOpen={handleOpen} />}
     </div>
   );
 };
