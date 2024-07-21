@@ -102,35 +102,13 @@
   height: 3px;
   background-color: #007bff;
 }
-
-
-.new_footer_top .f_social_icon a:hover {
-  background: #5e2ced;
-  border-color: #5e2ced;
-  color: white;
+.py-24{
+  padding-bottom: 24px;
+  padding-top: 24px;
 }
-
-.new_footer_top .f_social_icon a+a {
-  margin-left: 4px;
+.new_footer_top {
+padding-top: 0px;
 }
-
-/* .new_footer_top .f-title {
-  margin-bottom: 30px;
-  color: #263b5e;
-} */
-
-/* .f_600 {
-  font-weight: 600;
-} */
-
-/* .f_size_18 {
-  font-size: 18px;
-} */
-
-.new_footer_top .f_widget.about-widget .f_list li a {
-  color: #6a7695;
-}
-
 
 .new_footer_top .footer_bg {
   overflow-y: hidden;
@@ -143,7 +121,6 @@
 }
 
 .new_footer_top .footer_bg .footer_bg_one {
-  /* background: url("../img/dharmesh73-removebg-preview.png") no-repeat center center; */
   background: url("../src/assets/img/dharmesh73-removebg-preview.png") no-repeat center center;
   width: 330px;
   height: 100px;
@@ -156,7 +133,6 @@
 }
 
 .new_footer_top .footer_bg .footer_bg_two {
-  /* background: url("../img/hetu6666-removebg-preview.png") no-repeat center center; */
   background: url("../src/assets/img/hetu6666-removebg-preview.png") no-repeat center center;
   width: 330px;
   height: 100px;
@@ -193,4 +169,8 @@
   100% {
     left: 100%;
   }
+}
+.phone-input .PhoneInputInput {
+  outline: none;
+  box-shadow: none;
 }

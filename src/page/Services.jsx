@@ -6,7 +6,7 @@ import { ServicesCard } from "../assets/data";
 const Services = () => {
   
   return (
-    <div className="relative  mt-16 md:mt-24 xl:mt-32 xs:mx-2 md:mx-10 overflow-hidden">
+    <div className="relative  mt-16 md:mt-24 xl:mt-32 xs:mx-2 md:mx-10 overflow-hidden mb-20">
       <img
         src={Home_Slider2}
         alt="about"

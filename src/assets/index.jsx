@@ -9,7 +9,9 @@ import Card1 from "../assets/img/car carrier 2.jpeg"
 import Card2 from "../assets/img/card2.jpeg"
 import Card4 from "../assets/img/card4.jpeg"
 import Chooes from "../assets/img/chooes.jpeg"
+import Logomain from "../assets/img/logomain.png"
+import ContactUS from "../assets/img/contact.jpeg"
 
 export  {
-    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes
+    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS
 }

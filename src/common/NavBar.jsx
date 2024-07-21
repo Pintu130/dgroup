@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { NavLogo } from "../assets";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeFill } from "react-icons/ri";
@@ -15,9 +15,9 @@ const NavBar = () => {
     <header className="fixed top-0 left-0 w-full z-50">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <a href="/" className="flex items-center">
+          <Link to={"/"}  className="flex items-center">
             <img src={NavLogo} className="mr-3 h-6 sm:h-9" alt="Logo" />
-          </a>
+          </Link>
           <div className="flex items-center lg:order-2">
             <button
               onClick={toggleMobileMenu}

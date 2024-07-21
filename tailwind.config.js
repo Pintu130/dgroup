@@ -17,6 +17,9 @@ module.exports = {
 '4xl': '2050px',
 'large': '2560px',
 },
+colors: {
+  customBlue: '#0092ca', // Adding a custom color named 'customBlue'
+},
     },
   },
   plugins: [],
