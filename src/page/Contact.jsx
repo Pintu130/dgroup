@@ -1,13 +1,125 @@
-import React from "react";
-import CommonInputField from "../common/ComonInputFiled";
+import React, { useState } from "react";
 import { ContactUS } from "../assets";
 import SubHeader from "../common/SubHeader";
 import PhoneInputComponent from "../common/PhoneInputComponent";
 import { FaSquarePhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-
+import CommonInputField from "../common/CommonInputField";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
 const Contact = () => {
-  const Onsend = () => {};
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    from: "",
+    to: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+    setErrors((prev) => ({
+      ...prev,
+      [id]: "",
+    }));
+  };
+
+  const handleChangePhone = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+    if (value && !isValidPhoneNumber(value)) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Invalid phone number",
+      }));
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "",
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.phone) newErrors.phone = "Phone is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.from) newErrors.from = "From location is required";
+    if (!formData.to) newErrors.to = "To location is required";
+    return newErrors;
+  };
+
+  const onSend = (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+  
+    // Additional validation for phone number format and email format
+    if (!isValidPhoneNumber(formData.phone)) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Invalid phone number format",
+      }));
+      return;
+    }
+  
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      setErrors((prev) => ({
+        ...prev,
+        email: "Invalid email format",
+      }));
+      return;
+    }
+  
+    const serviceId = "service_i3slc7h";
+    const templateId = "template_6ovalan";
+    const publicKey = "cvthlDMfpnnY1x0HM";
+  
+    const templateParams = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      from: formData.from,
+      to: formData.to,
+    };
+  
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          // Reset form data after successful submission
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            from: "",
+            to: "",
+          });
+        },
+        (error) => {
+          toast.error("Failed to send message, please try again later.");
+        }
+      );
+  
+    console.log("Form submitted", formData);
+    
+  };
+  
+
   return (
     <div className="my-12">
       <div>
@@ -15,12 +127,11 @@ const Contact = () => {
       </div>
       <div className="mt-10">
         <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-xl mx-2 md:mx-5 p-5 border border-gray-200 gap-5">
-
-          <div className="md:w-1/2">
-            <p className="text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500" data-aos="slide-right">
+          <div className="md:w-1/2" data-aos="fade-up">
+            <p className="text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500">
               If You Have Any Queries, Please Feel Free To Contact Us
             </p>
-            <div className="flex flex-wrap gap-5 md:gap-10 mt-10" data-aos="slide-right">
+            <div className="flex flex-wrap gap-5 md:gap-10 mt-10">
               <div className="flex gap-3">
                 <p className="text-blue-500">
                   <FaSquarePhone className="h-8 md:h-10 w-8 md:w-10" />
@@ -44,15 +155,22 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="md:w-1/2" data-aos="slide-left">
+          <div className="md:w-1/2" data-aos="fade-up">
             <div className="grid grid-cols-2 gap-3">
               <CommonInputField
                 label="Name"
                 id="name"
                 placeholder="Name"
                 required
+                value={formData.name}
+                onChange={handleChange}
+                error={errors.name}
               />
-              <PhoneInputComponent />
+              <PhoneInputComponent
+                value={formData.phone}
+                onChange={handleChangePhone}
+                error={errors.phone}
+              />
             </div>
             <CommonInputField
               label="Email"
@@ -60,6 +178,9 @@ const Contact = () => {
               placeholder="Enter email address"
               required
               type="email"
+              value={formData.email}
+              onChange={handleChange}
+              error={errors.email}
             />
             <div className="grid grid-cols-2 gap-3">
               <CommonInputField
@@ -67,20 +188,30 @@ const Contact = () => {
                 id="from"
                 placeholder="From"
                 required
+                value={formData.from}
+                onChange={handleChange}
+                error={errors.from}
               />
-              <CommonInputField label="To" id="to" placeholder="To" required />
+              <CommonInputField
+                label="To"
+                id="to"
+                placeholder="To"
+                required
+                value={formData.to}
+                onChange={handleChange}
+                error={errors.to}
+              />
             </div>
             <div className="flex justify-center items-center mt-10">
               <button
                 type="submit"
                 className="bg-blue-500 px-5 text-white py-2 font-semibold hover:bg-blue-600"
-                onClick={Onsend}
+                onClick={onSend}
               >
                 Submit
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "react-phone-number-input/style.css";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneInput from "react-phone-number-input";
 
-const PhoneInputComponent = () => {
-  const [value, setValue] = useState();
-  const [error, setError] = useState('');
-
-  const handleChange = (value) => {
-    setValue(value);
-    if (value && !isValidPhoneNumber(value)) {
-      setError('Invalid phone number');
-    } else {
-      setError('');
-    }
-  };
-
+const PhoneInputComponent = ({ error, onChange, value }) => {
   return (
     <div className="mb-4">
       <label
@@ -28,10 +16,10 @@ const PhoneInputComponent = () => {
           placeholder="Enter phone number"
           defaultCountry="IN"
           value={value}
-          onChange={handleChange}
-          className="phone-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+          onChange={onChange}
+          className={`phone-input bg-gray-50 border ${error ? "border-red-500" : "border-gray-300"} text-gray-900 text-sm rounded-lg focus:outline-sky-500 block w-full p-2.5`}
         />
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
       </div>
     </div>
   );
