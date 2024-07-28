@@ -87,9 +87,9 @@ const Contact = () => {
       return;
     }
 
-    const serviceId = "service_i3slc7h";
-    const templateId = "template_6ovalan";
-    const publicKey = "cvthlDMfpnnY1x0HM";
+    const serviceId = "service_o68mfjn"; /* service_i3slc7h */ 
+    const templateId = "template_djggo2t"; /* template_6ovalan */
+    const publicKey = "NoOf6BVa2AXsk-4Po"; /* cvthlDMfpnnY1x0HM */
 
     const templateParams = {
       name: formData.name,
