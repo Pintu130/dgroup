@@ -9,6 +9,7 @@ import { isValidPhoneNumber } from "react-phone-number-input";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "../common/Loader";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,7 +20,7 @@ const Contact = () => {
     address:""
   });
   const [errors, setErrors] = useState({});
-
+const [isloading, setIsloading] = useState(false);
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -99,9 +100,10 @@ const Contact = () => {
       to: formData.to,
       address: formData.address,
     };
-
+    setIsloading(true);
     emailjs.send(serviceId, templateId, templateParams, publicKey).then(
       () => {
+        setIsloading(false);
         toast.success("Message sent successfully!");
         // Reset form data after successful submission
         setFormData({
@@ -114,6 +116,7 @@ const Contact = () => {
         });
       },
       (error) => {
+        setIsloading(false);
         toast.error("Failed to send message, please try again later.");
       }
     );
@@ -235,6 +238,7 @@ const Contact = () => {
         </div>
       </div>
       <ToastContainer />
+    <Loader loading={isloading}/> 
     </div>
   );
 };
