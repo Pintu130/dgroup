@@ -47,7 +47,7 @@ export default function HomeSlider() {
         >
             {sortedImages.map((image, index) => (
                 <SwiperSlide key={index} className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-blue-800 opacity-100"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-[#06b6d4] opacity-80"></div>
                     <div className='absolute text-white font-bold text-5xl text-center top-[50%]'>{image?.text}</div>
                     <img src={image.src} alt={`Slide ${index + 1}`} style={{ height: height }} className='w-full object-cover' />
                 </SwiperSlide>

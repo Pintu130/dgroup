@@ -14,7 +14,7 @@ const Choose = () => {
  }
   return (
     <div>
-      <div className="min-h-screen w-full flex items-center justify-center bg-white mt-24">
+      <div className="min-h-screen w-full flex items-center justify-center bg-white mt-16">
         <div className="bg-white shadow-lg overflow-hidden lg:flex">
           <div
             className="lg:w-1/2 overflow-hidden border-r-8 border-r-blue-500 rounded-r-full"

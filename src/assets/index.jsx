@@ -11,7 +11,9 @@ import Card4 from "../assets/img/card4.jpeg"
 import Chooes from "../assets/img/chooes.jpeg"
 import Logomain from "../assets/img/logomain.png"
 import ContactUS from "../assets/img/contact.jpeg"
+import AboutUs from "../assets/img/About.jpeg"
+import Service from "../assets/img/chooes.jpeg"
 
 export  {
-    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS
+    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS,AboutUs,Service
 }

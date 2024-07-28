@@ -12,9 +12,9 @@ const Card = ({ title, imageUrl, description, icon }) => {
       </div>
       </div>
 
-      <div className="rounded-xl flex items-center justify-center h-full px-2 xl:px-5  py-10  shadow-2xl mx-5 bg-blue-950">
+      <div className="rounded-xl flex items-center justify-center h-full px-2 xl:px-5  py-10  shadow-2xl mx-5 bg-[#155e75]">
         <div className="overflow-hidden cursor-pointer rounded-xl relative group">
-          <div className="rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-blue-950 to-transparent bg-gradient-to-t inset-x-0 -bottom-3 pt-30 text-white flex items-end">
+          <div className="rounded-xl z-40 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-[#0891b2] to-transparent bg-gradient-to-t inset-x-0 -bottom-3 pt-30 text-white flex items-end">
             <div>
               <div className="transform-gpu  p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
                 <div className="font-bold ">{title}</div>

@@ -15,7 +15,7 @@ import { MdContactPhone } from "react-icons/md";
 
 const FooterMenu = () => {
   return (
-    <div className="flex items-end w-full bg-white">
+    <div className="flex items-end w-full bg-white" data-aos="fade-up">
       <footer className=" w-full text-gray-700 bg-gray-100 body-font">
         <div className="flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
 
