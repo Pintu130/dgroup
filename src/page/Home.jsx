@@ -7,6 +7,8 @@ import Services from "./Services";
 import Choose from "./Choose";
 import Footer from "./Footer/Footer.jsx";
 import HomeCounter from "./HomeCounter.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 AOS.init({
   duration: 1000,
 });

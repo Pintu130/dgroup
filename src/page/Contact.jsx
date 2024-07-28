@@ -6,8 +6,9 @@ import { FaSquarePhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import CommonInputField from "../common/CommonInputField";
 import { isValidPhoneNumber } from "react-phone-number-input";
-import emailjs from '@emailjs/browser';
-import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,6 +16,7 @@ const Contact = () => {
     email: "",
     from: "",
     to: "",
+    address:""
   });
   const [errors, setErrors] = useState({});
 
@@ -55,6 +57,7 @@ const Contact = () => {
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.from) newErrors.from = "From location is required";
     if (!formData.to) newErrors.to = "To location is required";
+    if (!formData.address) newErrors.address = "Current address is required";
     return newErrors;
   };
 
@@ -65,7 +68,7 @@ const Contact = () => {
       setErrors(validationErrors);
       return;
     }
-  
+
     // Additional validation for phone number format and email format
     if (!isValidPhoneNumber(formData.phone)) {
       setErrors((prev) => ({
@@ -74,7 +77,7 @@ const Contact = () => {
       }));
       return;
     }
-  
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.email)) {
       setErrors((prev) => ({
@@ -83,42 +86,38 @@ const Contact = () => {
       }));
       return;
     }
-  
+
     const serviceId = "service_i3slc7h";
     const templateId = "template_6ovalan";
     const publicKey = "cvthlDMfpnnY1x0HM";
-  
+
     const templateParams = {
       name: formData.name,
       phone: formData.phone,
       email: formData.email,
       from: formData.from,
       to: formData.to,
+      address: formData.address,
     };
-  
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then(
-        () => {
-          toast.success("Message sent successfully!");
-          // Reset form data after successful submission
-          setFormData({
-            name: "",
-            phone: "",
-            email: "",
-            from: "",
-            to: "",
-          });
-        },
-        (error) => {
-          toast.error("Failed to send message, please try again later.");
-        }
-      );
-  
-    console.log("Form submitted", formData);
-    
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+      () => {
+        toast.success("Message sent successfully!");
+        // Reset form data after successful submission
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          from: "",
+          to: "",
+          address:""
+        });
+      },
+      (error) => {
+        toast.error("Failed to send message, please try again later.");
+      }
+    );
   };
-  
 
   return (
     <div className="my-12">
@@ -138,19 +137,28 @@ const Contact = () => {
                 </p>
                 <div>
                   <p className="text-xl font-semibold text-blue-500">Call Us</p>
-                  <p className="cursor-pointer"> +91 123456789</p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <p className="text-blue-500">
-                  <MdEmail className="h-8 md:h-11 w-8 md:w-11" />
-                </p>
-                <div>
-                  <p className="text-xl font-semibold text-blue-500">Mail Us</p>
-                  <p className="cursor-pointer">
-                    dgrouppackersandmovers1@gmail.com
+                  <p className="text-sm md:text-base cursor-pointer">
+                    +91 123456789
                   </p>
                 </div>
+              </div>
+              <div className="">
+                <div className="flex gap-3">
+                  <p className="text-blue-500">
+                    <MdEmail className="h-8 md:h-11 w-8 md:w-11" />
+                  </p>
+                  <div>
+                    <p className="text-xl font-semibold text-blue-500">
+                      Mail Us
+                    </p>
+                    <p className="text-sm md:text-base cursor-pointer hidden md:block">
+                      dgrouppackersandmovers1@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm md:text-base cursor-pointer block md:hidden">
+                  dgrouppackersandmovers1@gmail.com
+                </p>
               </div>
             </div>
           </div>
@@ -202,6 +210,18 @@ const Contact = () => {
                 error={errors.to}
               />
             </div>
+
+            <CommonInputField
+              label="Current Address"
+              id="address"
+              placeholder="Enter your current address"
+              required
+              type="address"
+              value={formData.address}
+              onChange={handleChange}
+              error={errors.address}
+            />
+
             <div className="flex justify-center items-center mt-10">
               <button
                 type="submit"
@@ -214,6 +234,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
