@@ -1,21 +1,24 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { NavLogo } from "../assets";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header onClick={()=> isMobileMenuOpen && setIsMobileMenuOpen(!isMobileMenuOpen)} className="fixed top-0 left-0 w-full z-50">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to={"/"}  className="flex items-center">
+          <Link to={"/"} className="flex items-center">
             <img src={NavLogo} className="mr-3 h-6 sm:h-9" alt="Logo" />
           </Link>
           <div className="flex items-center lg:order-2">
@@ -45,9 +48,8 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/"
-                  exact
-                  className="block py-2 pr-4 pl-3 text-blue-700 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0"
-                  activeClassName="text-primary-700"
+                  exact="true"
+                  className={`block py-2 pr-4 pl-3 rounded lg:bg-transparent lg:p-0 ${isActive("/") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   Home
                 </NavLink>
@@ -55,7 +57,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/about"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0 transition-colors duration-300 ${isActive("/about") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   About
                 </NavLink>
@@ -63,7 +65,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/services"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0 transition-colors duration-300 ${isActive("/services") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   Services
                 </NavLink>
@@ -71,7 +73,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/track"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0 transition-colors duration-300 ${isActive("/track") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   Track Now
                 </NavLink>
@@ -79,7 +81,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/contact"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0 transition-colors duration-300 ${isActive("/contact") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   Contact
                 </NavLink>
@@ -87,7 +89,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   to="/review"
-                  className="block py-2 pr-4 pl-3 text-gray-700 hover:text-yellow-500 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition-colors duration-300"
+                  className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:p-0 transition-colors duration-300 ${isActive("/review") ? "text-yellow-500 font-semibold" : "text-gray-700"}`}
                 >
                   Review
                 </NavLink>
