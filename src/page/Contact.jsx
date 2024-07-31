@@ -243,6 +243,20 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+        <div className="mt-10">
+          <div className="mt-5">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.2920511342687!2d72.9940037150702!3d21.701308385610847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f719ae0d5a815%3A0x27e8c9e8b287e70c!2sSanskar%20Avenue%2C%20Zadeshwar%20Rd%2C%20Zadeshwar%2C%20Bharuch%2C%20Gujarat%20392011!5e0!3m2!1sen!2sin!4v1628230946541!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
       </div>
       <div className="mt-10">
         <Footer />
