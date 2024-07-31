@@ -26,25 +26,25 @@ const FooterMenu = () => {
               </h2>
               <nav className="mb-10 list-none small:ml-8 xs:ml-6 sm:ml-0 flex flex-wrap md:flex-col md:gap-0 gap-3">
                 <li className="mt-2">
-                  <Link className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
+                  <Link to={'/'} className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
                     <MdHome className="h-5 w-5" />
                     <p>Home</p>
                   </Link>
                 </li>
                 <li className="mt-2">
-                  <Link className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
+                  <Link to={'/about'} className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
                     <FaBookOpen className="h-4 w-4" />
                     <p>About</p>
                   </Link>
                 </li>
                 <li className="mt-2">
-                  <Link className="flex gap-2 items-center text-gray-500 cursor-pointer hover:text-gray-900">
+                  <Link to={'/services'} className="flex gap-2 items-center text-gray-500 cursor-pointer hover:text-gray-900">
                     <MdMiscellaneousServices className="h-5 w-5" />
                     <p>Services</p>
                   </Link>
                 </li>
                 <li className="mt-2">
-                  <Link className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
+                  <Link to={'/contact'} className="flex gap-3 items-center text-gray-500 cursor-pointer hover:text-gray-900">
                     <MdContactPhone className="h-4 w-4" />
                     <p>Contact</p>
                   </Link>
@@ -62,16 +62,16 @@ const FooterMenu = () => {
                     Term & conditions
                   </Link>
                   <span className="inline-flex space-x-4 lg:space-x-6 justify-center mt-2  md:justify-start">
-                    <Link className="text-gray-500 cursor-pointer hover:text-gray-700">
+                    <Link to={"https://www.facebook.com/profile.php?id=100064874804409&mibextid=ZbWKwL"}className="text-gray-500 cursor-pointer hover:text-gray-700">
                       <FaFacebookF className="h-5 w-5" />
                     </Link>
-                    <Link className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
+                    <Link to={'/'} className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
                       <FaXTwitter className="h-5 w-5" />
                     </Link>
-                    <Link className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
+                    <Link to={"https://instagram.com/dgpm_?igshid=N2ZiY2E3YmU="} className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
                       <FaInstagram className="h-5 w-5" />
                     </Link>
-                    <Link className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
+                    <Link to={'/'} className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
                       <IoLogoYoutube className="h-5 w-5" />
                     </Link>
                   </span>

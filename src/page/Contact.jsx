@@ -7,9 +7,10 @@ import { MdEmail } from "react-icons/md";
 import CommonInputField from "../common/CommonInputField";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loader from "../common/Loader";
+import Footer from "./Footer/Footer";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,10 +18,10 @@ const Contact = () => {
     email: "",
     from: "",
     to: "",
-    address:""
+    address: "",
   });
   const [errors, setErrors] = useState({});
-const [isloading, setIsloading] = useState(false);
+  const [isloading, setIsloading] = useState(false);
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -88,7 +89,7 @@ const [isloading, setIsloading] = useState(false);
       return;
     }
 
-    const serviceId = "service_o68mfjn"; /* service_i3slc7h */ 
+    const serviceId = "service_o68mfjn"; /* service_i3slc7h */
     const templateId = "template_djggo2t"; /* template_6ovalan */
     const publicKey = "NoOf6BVa2AXsk-4Po"; /* cvthlDMfpnnY1x0HM */
 
@@ -112,7 +113,7 @@ const [isloading, setIsloading] = useState(false);
           email: "",
           from: "",
           to: "",
-          address:""
+          address: "",
         });
       },
       (error) => {
@@ -123,7 +124,7 @@ const [isloading, setIsloading] = useState(false);
   };
 
   return (
-    <div className="my-12">
+    <div className="mt-12">
       <div>
         <SubHeader img={ContactUS} text={"Contact"} />
       </div>
@@ -134,19 +135,22 @@ const [isloading, setIsloading] = useState(false);
               If You Have Any Queries, Please Feel Free To Contact Us
             </p>
             <div className="flex flex-wrap gap-5 md:gap-10 mt-10">
-              <div className="flex gap-3">
+              <a href="tel:+919558037242" className="flex gap-3">
                 <p className="text-blue-500">
                   <FaSquarePhone className="h-8 md:h-10 w-8 md:w-10" />
                 </p>
                 <div>
                   <p className="text-xl font-semibold text-blue-500">Call Us</p>
                   <p className="text-sm md:text-base cursor-pointer">
-                    +91 123456789
+                    +919558037242
                   </p>
                 </div>
-              </div>
+              </a>
               <div className="">
-                <div className="flex gap-3">
+                <a
+                  href="mailto:dgrouppackersandmovers1@gmail.com"
+                  className="flex gap-3"
+                >
                   <p className="text-blue-500">
                     <MdEmail className="h-8 md:h-11 w-8 md:w-11" />
                   </p>
@@ -158,10 +162,13 @@ const [isloading, setIsloading] = useState(false);
                       dgrouppackersandmovers1@gmail.com
                     </p>
                   </div>
-                </div>
-                <p className="text-sm md:text-base cursor-pointer block md:hidden">
+                </a>
+                <a
+                  href="mailto:dgrouppackersandmovers1@gmail.com"
+                  className="text-sm md:text-base cursor-pointer block md:hidden"
+                >
                   dgrouppackersandmovers1@gmail.com
-                </p>
+                </a>
               </div>
             </div>
           </div>
@@ -237,8 +244,11 @@ const [isloading, setIsloading] = useState(false);
           </div>
         </div>
       </div>
+      <div className="mt-10">
+        <Footer />
+      </div>
       <ToastContainer />
-    <Loader loading={isloading}/> 
+      <Loader loading={isloading} />
     </div>
   );
 };
