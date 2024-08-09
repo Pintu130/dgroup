@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../common/Card";
 import { Home_Slider2, Service } from "../assets";
-import { ServicesCard } from "../assets/data";
+import { ServicesCard, ServicesCard1 } from "../assets/data";
 import { useLocation } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import SubHeader from "../common/SubHeader";
@@ -17,7 +17,11 @@ const Services = () => {
         </div>
       )}
 
-      <div className={`relative xs:mx-2 md:mx-10 overflow-hidden mb-20 ${location?.pathname === "/services" ? 'mt-10' : 'mt-16 md:mt-24 xl:mt' } `}>
+      <div
+        className={`relative xs:mx-2 md:mx-10 overflow-hidden mb-20 ${
+          location?.pathname === "/services" ? "mt-10" : "mt-16 md:mt-24 xl:mt"
+        } `}
+      >
         <img
           src={Home_Slider2}
           alt="about"
@@ -55,6 +59,28 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      {location?.pathname === "/services" && (
+        <div className="bg-white shadow-2xl mx-10 py-5 rounded-2xl">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:flex justify-center items-center mx-5 my-10"
+            data-aos="fade-up"
+          >
+            {ServicesCard1?.map((item, index) => {
+              return (
+                <div key={index} className="">
+                  <Card
+                    title={item?.title}
+                    imageUrl={item?.image}
+                    description={item?.description}
+                    icon={item?.icon}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {location?.pathname === "/services" && (
         <div className="mt-10">

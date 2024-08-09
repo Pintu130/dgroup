@@ -1,4 +1,4 @@
-import storage from "../assets/img/5x10-storage-unit-min-scaled-e1620915610988.jpg"
+// import storage from "../assets/img/5x10-storage-unit-min-scaled-e1620915610988.jpg"
 import NavLogo from "../assets/img/d group(2)logo.jpg"
 import Home_Slider1 from "../assets/img/slider_image_1.jpg"
 import Home_Slider2 from "../assets/img/slider_image_2.jpg"
@@ -13,7 +13,13 @@ import Logomain from "../assets/img/logomain.png"
 import ContactUS from "../assets/img/contact.jpeg"
 import AboutUs from "../assets/img/About.jpeg"
 import Service from "../assets/img/chooes.jpeg"
+import storage from "../assets/img/storage.jpg"
+import transection from "../assets/img/transection1.jpeg"
+import transport from "../assets/img/transport.jpeg"
+import card3 from "../assets/img/card3.jpeg"
+import card2 from "../assets/img/card2.jpeg"
+
 
 export  {
-    storage,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS,AboutUs,Service
+    storage,transection,card2,card3,transport,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS,AboutUs,Service
 }
