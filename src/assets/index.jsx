@@ -18,8 +18,18 @@ import transection from "../assets/img/transection1.jpeg"
 import transport from "../assets/img/transport.jpeg"
 import card3 from "../assets/img/card3.jpeg"
 import card2 from "../assets/img/card2.jpeg"
+import Vishal from "../assets/img/vishal.jpg"
+import Shital from "../assets/img/Shital.jpg"
+import Harish from "../assets/img/Harish.jpg"
+import Sukhwinder from "../assets/img/Sukhwinder.jpg"
+import Gourish from "../assets/img/Gourish.jpg"
+import Mohit from "../assets/img/Mohit.jpg"
+import Harshal from "../assets/img/Harshal.jpg"
+import Dilip from "../assets/img/Dilip.jpg"
+import Kalpesh from "../assets/img/Kalpesh.jpg"
+
 
 
 export  {
-    storage,transection,card2,card3,transport,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS,AboutUs,Service
+    Vishal,Kalpesh,Dilip,Harshal,Mohit,Gourish,Sukhwinder,Harish,Shital,storage,transection,card2,card3,transport,NavLogo,Home_Slider1,Home_Slider2,Home_Slider3,Home_Slider4,Home_Slider5,Card1,Card2,Card4,Chooes,Logomain,ContactUS,AboutUs,Service
 }
